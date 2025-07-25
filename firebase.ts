@@ -1,5 +1,9 @@
 // Import the functions you need from the SDKs you need
-/* firebase.tsx */
+// Initializes Firebase App with our project’s
+//   config (apiKey, authDomain, etc.).
+// Exports `auth` and `db` for use elsewhere.
+// We avoid hard‑coding credentials by loading
+//   from environment variables.
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";

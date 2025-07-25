@@ -1,3 +1,7 @@
+// • Wraps app in AuthProvider so we can useContext
+// • Puts our Stack navigator inside NavigationContainer
+//   (required by react‑navigation).
+
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import MainNavigator from './services/MainNavigator';

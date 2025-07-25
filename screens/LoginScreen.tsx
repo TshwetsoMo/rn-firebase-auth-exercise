@@ -1,3 +1,8 @@
+// Renders the login form.
+// • Collects email/password via controlled TextInputs.
+// • Calls loginUser() on button press.
+// • Demonstrates simple navigation to Register screen.
+
 import React, { useState } from 'react';
 import { TextInput, SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +13,11 @@ const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+    /**
+   * handleLogin
+   * Wraps loginUser in try/catch so we can
+   * show alerts or errors down the line.
+   */
   const handleLogin = async () => {
     try {
       await loginUser(email, password);
@@ -16,7 +26,7 @@ const LoginScreen = () => {
     }
   };
 
-  return (
+  return (/* SafeAreaView ensures we don’t overlap status bar / notch on iOS devices */
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.title}>Login</Text>
@@ -34,10 +44,11 @@ const LoginScreen = () => {
           onChangeText={setPassword}
           value={password}
           secureTextEntry
-        />
+        />{/* Primary action */}
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
+        {/* Secondary nav to Register */}
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
           <Text style={styles.linkText}>Don't have an account? Register</Text>
         </TouchableOpacity>

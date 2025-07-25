@@ -1,5 +1,9 @@
 // TODO: Create Firebase Auth Function
-
+// Defines all authentication‑related side‑effects:
+//  • loginUser()
+//  • registerUser() (plus saving a profile doc to Firestore)
+//  • logoutUser()
+//  • getUserInfo()
 import { auth, db } from '../firebase';
 import {
   signInWithEmailAndPassword,

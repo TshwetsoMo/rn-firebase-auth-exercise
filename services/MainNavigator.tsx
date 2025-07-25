@@ -1,4 +1,8 @@
 /* MainNavigator.tsx */
+// Chooses which stack to show based on `user`:
+// • If user exists, show ProfileScreen.
+// • Otherwise, show Login & Register screens.
+// Demonstrates dynamic navigation flows.
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from '../screens/LoginScreen';
@@ -13,10 +17,11 @@ const MainNavigator = () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {user ? (
+      {user ? (  // User is signed in → entry point to app
         <Stack.Screen name="Profile" component={ProfileScreen} />
       ) : (
         <>
+            {/* User is not signed in → show auth screens */}
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Register" component={RegistrationScreen} />
         </>

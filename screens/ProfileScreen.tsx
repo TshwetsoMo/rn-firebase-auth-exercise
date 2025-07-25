@@ -1,3 +1,7 @@
+// Shows current user’s email/displayName.
+// Contains a “Mission Complete” animated banner.
+// Uses React Native’s Animated API.
+
 import React, { useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, Button, SafeAreaView, Animated, Dimensions } from 'react-native';
 import { getUserInfo, logoutUser } from '../services/authService';
@@ -44,7 +48,9 @@ const ProfileScreen = () => {
           onPress={handleLogout}
         />
 
-        {/* Animated “Mission Complete” */}
+        {/* Animated “Mission Complete” 
+          // Slide both halves of banner into view when
+         // this screen mounts.*/}
         <View style={styles.bannerContainer}>
           <Animated.View style={[styles.bannerHalf, { transform: [{ translateX: slideLeft }] }]}>
             <Text style={styles.bannerText}>Mission</Text>

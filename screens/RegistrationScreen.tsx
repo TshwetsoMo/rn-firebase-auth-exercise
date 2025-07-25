@@ -1,5 +1,9 @@
 // TODO: Create Register Screen & Register Functionality
-
+// RegistrationScreen.tsx
+// Much like LoginScreen but for signing up.
+// • Captures email/password.  
+// • Calls registerUser(), then (in the future)
+//   might navigate on success or display errors.
 import React, { useState } from 'react';
 import { TextInput, SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
